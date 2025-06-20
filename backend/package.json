@@ -1,8 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
+<<<<<<< HEAD
   "main": "index.js",
   "type": "module",
+=======
+  "main": "app.js",
+>>>>>>> upstream/main
   "scripts": {
     "dev": "nodemon index.js"
   },
@@ -11,10 +15,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
     "@prisma/client": "^6.10.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
     "prisma": "^6.10.1"
+=======
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+>>>>>>> upstream/main
   }
 }
