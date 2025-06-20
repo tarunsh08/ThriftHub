@@ -1,7 +1,3 @@
-import Seller from '../models/seller.model.js';
-import Product from '../models/product.model.js';
-import Order from '../models/order.model.js';
-
 // @desc    Register as a seller
 // @route   POST /api/sellers/register
 // @access  Private
