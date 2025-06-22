@@ -1,3 +1,6 @@
+import SellerProfile from '../prisma/schema.prisma';
+import Product from '../prisma/schema.prisma';
+
 // @desc    Register as a seller
 // @route   POST /api/sellers/register
 // @access  Private
@@ -7,12 +10,12 @@ export const registerSeller = async (req, res) => {
     const clerkUserId = req.auth.userId;
 
     // Check if already registered
-    const existingSeller = await Seller.findOne({ clerkUserId });
+    const existingSeller = await SellerProfile.findOne({ clerkUserId });
     if (existingSeller) {
       return res.status(400).json({ message: 'You are already registered as a seller' });
     }
 
-    const seller = await Seller.create({
+    const seller = await SellerProfile.create({
       clerkUserId,
       storeName,
       bio,
@@ -32,7 +35,7 @@ export const registerSeller = async (req, res) => {
 // @access  Private
 export const getSellerProfile = async (req, res) => {
   try {
-    const seller = await Seller.findOne({ clerkUserId: req.auth.userId })
+    const seller = await SellerProfile.findOne({ clerkUserId: req.auth.userId })
       .populate('products', 'title price images')
       .populate('orders', 'status totalAmount');
 
@@ -52,7 +55,7 @@ export const getSellerProfile = async (req, res) => {
 export const addProduct = async (req, res) => {
   try {
     const { title, description, price, category, condition, size, images } = req.body;
-    const seller = await Seller.findOne({ clerkUserId: req.auth.userId });
+    const seller = await SellerProfile.findOne({ clerkUserId: req.auth.userId });
 
     if (!seller) {
       return res.status(403).json({ message: 'Seller profile not found' });

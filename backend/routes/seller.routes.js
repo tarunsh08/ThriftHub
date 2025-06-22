@@ -20,7 +20,7 @@ const router = express.Router();
 router.use(ClerkExpressRequireAuth());
 
 // Seller Registration (First-time setup)
-router.post('/register', registerSeller);
+router.post('/register-seller', registerSeller);
 
 // Seller Profile Management
 router.route('/profile')

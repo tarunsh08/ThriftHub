@@ -1,3 +1,10 @@
+
+import User from '../prisma/schema.prisma';
+import Product from '../prisma/schema.prisma';
+import Order from '../prisma/schema.prisma';
+import Seller from '../prisma/schema.prisma';
+import Admin from '../prisma/schema.prisma';
+
 // @desc    Get dashboard statistics
 // @route   GET /api/admin/dashboard
 // @access  Private/Admin

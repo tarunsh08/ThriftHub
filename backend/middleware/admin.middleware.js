@@ -1,4 +1,4 @@
-import Admin from '../models/admin.model.js';
+import Admin from '../prisma/schema.prisma';
 
 export const requireAdmin = async (req, res, next) => {
   try {

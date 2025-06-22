@@ -1,8 +1,8 @@
-import Seller from '../models/seller.model.js';
+import SellerProfile from '../prisma/prismaClient.js';
 
 export const authorizeSeller = async (req, res, next) => {
   try {
-    const seller = await Seller.findOne({ clerkUserId: req.auth.userId });
+    const seller = await SellerProfile.findOne({ clerkUserId: req.auth.userId });
     
     if (!seller) {
       return res.status(403).json({ message: 'Seller profile not found' });

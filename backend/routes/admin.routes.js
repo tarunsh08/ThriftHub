@@ -12,7 +12,7 @@ import {
 } from '../controllers/admin.controller.js';
 import { ClerkExpressRequireAuth } from '@clerk/clerk-sdk-node';
 import { requireAdmin, checkPermission } from '../middleware/admin.middleware.js';
-
+// import { prisma } from '../lib/prisma.js';
 const router = express.Router();
 
 router.use(ClerkExpressRequireAuth());

@@ -1,4 +1,4 @@
-import User from '../models/user.model.js';
+import User from '../prisma/schema.prisma'
 
 // @desc    Get user profile
 // @route   GET /api/users/profile
